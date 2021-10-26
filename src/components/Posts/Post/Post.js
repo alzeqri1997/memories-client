@@ -95,7 +95,7 @@ const Post = ({ post, setCurrentId }) => {
               style={{ color: 'white' }}
               size="small"
             >
-              <MoreHorizIcon fontsize="default" />
+              <MoreHorizIcon fontSize="medium" />
             </Button>
           </div>
         )}
@@ -121,7 +121,7 @@ const Post = ({ post, setCurrentId }) => {
         </Button>
         {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
           <Button size="small" color="secondary" onClick={() => dispatch(deletePost(post._id))}>
-            <DeleteIcon fontsize="small" /> &nbsp; Delete
+            <DeleteIcon fontSize="small" /> &nbsp; Delete
           </Button>
         )}
       </CardActions>

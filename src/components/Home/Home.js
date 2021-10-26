@@ -50,7 +50,7 @@ const Home = () => {
       <Container maxWidth="xl">
         <Grid
           container
-          justify="space-between"
+          justifyContent="space-between"
           alignItems="stretch"
           spacing={3}
           className={classes.gridContainer}
@@ -58,30 +58,29 @@ const Home = () => {
           <Grid item xs={12} sm={6} md={9}>
             <Posts setCurrentId={setCurrentId} />
           </Grid>
-        </Grid>
-
-        <Grid item xs={12} sm={6} md={3}>
-          <AppBar className={classes.appBarSearch} position="static" color="inherit">
-            <TextField
-              onKeyDown={handleKeyPress}
-              name="search"
-              label="search Memories"
-              fullWidth
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-            />
-            <ChipInput
-              style={{ margin: '10px 0' }}
-              value={tags}
-              onAdd={chip => handleAddChip(chip)}
-              onDelete={chip => handleDeleteChip(chip)}
-              label="Search Tags"
-            />
-            <Button onClick={searchPost} className={classes.searchButton} color="primary">
-              Search
-            </Button>
-          </AppBar>
-          <Pagination />
+          <Grid item xs={12} sm={6} md={3}>
+            <AppBar className={classes.appBarSearch} position="static" color="inherit">
+              <TextField
+                onKeyDown={handleKeyPress}
+                name="search"
+                label="search Memories"
+                fullWidth
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+              />
+              <ChipInput
+                style={{ margin: '10px 0' }}
+                value={tags}
+                onAdd={chip => handleAddChip(chip)}
+                onDelete={chip => handleDeleteChip(chip)}
+                label="Search Tags"
+              />
+              <Button onClick={searchPost} className={classes.searchButton} color="primary">
+                Search
+              </Button>
+            </AppBar>
+            <Pagination page={page} />
+          </Grid>
         </Grid>
       </Container>
     </Grow>
