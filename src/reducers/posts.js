@@ -1,4 +1,3 @@
-import { fetchPostsBySearch } from "../api";
 import {
   FETCH_ALL,
   FETCH_BY_SEARCH,
@@ -28,7 +27,6 @@ const postReducer = (state = { isLoading: true, posts: [] }, action) => {
     case FETCH_BY_CREATOR:
       return { ...state, post: action.payload.post };
     case FETCH_POST:
-      console.log("inside FETCH_POST Reducer", action.payload);
       return { ...state, post: action.payload.post.data };
     case LIKE:
       return {

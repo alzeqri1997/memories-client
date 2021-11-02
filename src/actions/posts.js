@@ -17,7 +17,6 @@ export const getPost = (id) => async (dispatch) => {
   try {
     dispatch({ type: START_LOADING });
     const { data } = await api.fetchPost(id);
-    console.log("I am inside actions posts", data.data);
 
     dispatch({ type: FETCH_POST, payload: { post: data } });
   } catch (error) {
@@ -85,6 +84,7 @@ export const deletePost = (id) => async (dispatch) => {
 
 export const commentPost = (value, id) => async (dispatch) => {
   try {
+    console.log("I am inside commentPost");
     const { data } = await api.comment(value, id);
 
     dispatch({ type: COMMENT, payload: data });
