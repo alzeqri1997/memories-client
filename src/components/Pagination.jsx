@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { useDispatch,useSelector } from 'react-redux';
-import {Pagination, PaginationItem} from '@material-ui/lab'
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Pagination, PaginationItem } from '@material-ui/lab'
+import { Link, useHistory } from 'react-router-dom';
 
 import { getPosts } from '../actions/posts';
 import useStyles from './styles';
@@ -10,12 +10,13 @@ const Paginate = ({ page }) => {
     const { numberOfPages } = useSelector((state) => state.postReducer);
     const dispatch = useDispatch();
     const classes = useStyles();
+    const history = useHistory();
 
     useEffect(() => {
         if (page) {
             dispatch(getPosts(page))
         }
-    }, [dispatch, page]);
+    }, [page]);
     return (
         <Pagination
             classes={{ ul: classes.ul }}
@@ -23,10 +24,10 @@ const Paginate = ({ page }) => {
             page={Number(page) || 1}
             variant="outlined"
             color="primary"
-            renderItem={(item) => {
-                <PaginationItem {...item} component={Link} to={`/posts?page=${item.page}`} />
-            }}
-            />
+            renderItem={(item) => (
+                <PaginationItem {...item} page={item.page} component={Link} to={`/posts?page=${item.page}`} />
+            )}
+        />
     )
 }
 

@@ -25,7 +25,7 @@ const postReducer = (state = { isLoading: true, posts: [] }, action) => {
       };
     case FETCH_BY_SEARCH:
     case FETCH_BY_CREATOR:
-      return { ...state, post: action.payload.post };
+      return { ...state, posts: action.payload.data };
     case FETCH_POST:
       return { ...state, post: action.payload.post.data };
     case LIKE:
