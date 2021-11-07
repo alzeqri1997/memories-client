@@ -46,6 +46,11 @@ const Home = () => {
     }
   };
 
+  const clear = () => {
+    setSearch("");
+    history.push("/");
+  };
+
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
       // KeyCode of 13 == Enter
@@ -77,6 +82,7 @@ const Home = () => {
               color="inherit"
             >
               <TextField
+                spellCheck
                 onKeyDown={handleKeyPress}
                 name="search"
                 label="search Memories"
@@ -97,6 +103,15 @@ const Home = () => {
                 color="primary"
               >
                 Search
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                size="small"
+                onClick={clear}
+                fullWidth
+              >
+                Clear
               </Button>
             </AppBar>
             <Form currentId={currentId} setCurrentId={setCurrentId} />

@@ -82,6 +82,7 @@ const Form = ({ currentId, setCurrentId }) => {
           {currentId ? `Editing "${post?.title}"` : "Creating a Memory"}{" "}
         </Typography>
         <TextField
+          spellCheck
           label="Title"
           name="title"
           variant="outlined"
@@ -90,6 +91,7 @@ const Form = ({ currentId, setCurrentId }) => {
           onChange={(e) => setPostData({ ...postData, title: e.target.value })}
         />
         <TextField
+          spellCheck
           label="Message"
           name="message"
           variant="outlined"
@@ -103,6 +105,7 @@ const Form = ({ currentId, setCurrentId }) => {
         />
         <div style={{ padding: "5px 0", width: "94%" }}>
           <ChipInput
+            spellCheck
             name="tags"
             variant="outlined"
             label="Tags"

@@ -89,7 +89,7 @@ const Post = ({ post, setCurrentId }) => {
         <div className={classes.overlay}>
           <Typography variant="h6">{post.name}</Typography>
           <Typography variant="body2">
-            {moment(post.createAt).fromNow()}
+            {moment(post.createdAt).fromNow()}
           </Typography>
         </div>
         {(user?.result?.googleId === post?.creator ||
@@ -110,7 +110,7 @@ const Post = ({ post, setCurrentId }) => {
 
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
-            {post.tags.map((tag) => `#${tag}`)}
+            {post.tags.map((tag) => `#${tag} `)}
           </Typography>
         </div>
         <Typography

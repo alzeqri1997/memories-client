@@ -8,7 +8,6 @@ export default makeStyles((theme) => ({
     maxHeight: "600px",
   },
   card: {
-    display: "flex",
     width: "100%",
     [theme.breakpoints.down("sm")]: {
       flexWrap: "wrap",
@@ -42,12 +41,10 @@ export default makeStyles((theme) => ({
     height: "39vh",
   },
   commentsOuterContainer: {
-    display: "flex",
     justifyContent: "space-between",
   },
   commentsInnerContainer: {
-    height: "200px",
+    maxHeight: "800px",
     overflowY: "auto",
-    marginRight: "30px",
   },
 }));
