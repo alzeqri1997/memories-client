@@ -1,7 +1,7 @@
 // import { Container } from '@material-us/core';
 import React, { useEffect, useState } from "react";
 import { Container } from "@material-ui/core";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Auth from "./components/Auth/Auth";
 import Home from "./components/Home/Home";
@@ -13,8 +13,6 @@ const App = () => {
   useEffect(() => {
     if (!user) setUser("");
   }, [user]);
-
-  console.log(user);
   return (
     <BrowserRouter>
       <Container maxWidth="xl">
@@ -33,6 +31,15 @@ const App = () => {
             exact
             path="/auth"
             component={() => (!user ? <Auth /> : <Redirect to="/posts" />)}
+          />
+          <Route
+            path="*"
+            component={() => (
+              <div>
+                <h1> not Found</h1>
+                <Link to="/">Go back</Link>
+              </div>
+            )}
           />
         </Switch>
       </Container>
