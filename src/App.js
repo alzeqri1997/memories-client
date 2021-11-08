@@ -1,5 +1,4 @@
 // import { Container } from '@material-us/core';
-import React, { useEffect, useState } from "react";
 import { Container } from "@material-ui/core";
 import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
@@ -9,10 +8,7 @@ import PostDetails from "./components/PostDetails/PostDetails";
 import CreatorOrTag from "./components/CreatorOrTag/CreatorOrTag";
 
 const App = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
-  useEffect(() => {
-    if (!user) setUser("");
-  }, [user]);
+  const user = JSON.parse(localStorage.getItem("profile"));
   return (
     <BrowserRouter>
       <Container maxWidth="xl">

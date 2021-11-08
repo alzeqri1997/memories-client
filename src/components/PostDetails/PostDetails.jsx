@@ -2,25 +2,24 @@ import React, { useEffect } from "react";
 import {
     Paper,
     Typography,
-    CircularProgress,
     Divider,
+    CircularProgress
 } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
-import { useParams, useHistory, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-import { getPost, getPostsBySearch } from "../../actions/posts";
+import { getPost } from "../../actions/posts";
 
 import CommentSection from "./CommentSection";
 
 import useStyles from "./styles";
 
 const Post = () => {
-    const { post, posts, isLoading } = useSelector((state) => state.postReducer);
-    const postReducer = useSelector((state) => state.postReducer);
+    const { post, isLoading } = useSelector((state) => state.postReducer);
+
 
     const dispatch = useDispatch();
-    const history = useHistory();
     const classes = useStyles();
     const { id } = useParams();
 
@@ -28,21 +27,15 @@ const Post = () => {
         dispatch(getPost(id));
     }, [id, dispatch]);
 
-    // useEffect(() => {
-    //     if (post) {
-    //     }
-    // }, [post])
-
     if (!post) return null;
 
-    // if (isLoading) {
-    //     return (
-    //         <Paper elevation={6} className={classes.loadingPaper}>
-    //             <CircularProgress size="7em" />
-    //         </Paper>
-    //     );
-    //
-
+    if (isLoading) {
+        return (
+            <Paper elevation={6} className={classes.loadingPaper}>
+                <CircularProgress size="7em" />
+            </Paper>
+        );
+    }
 
     return (
         <Paper style={{ padding: "20px", borderRadius: "15px" }} elevation={6}>

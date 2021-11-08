@@ -1,5 +1,7 @@
 import axios from "axios";
-const API = axios.create({ baseURL: "http://localhost:3001" });
+const baseURL = "https://memories-server-2021.herokuapp.com/";
+// const baseURL = "http://localhost:5000";
+const API = axios.create({ baseURL });
 
 API.interceptors.request.use((req) => {
   // Do something before request is sent ...

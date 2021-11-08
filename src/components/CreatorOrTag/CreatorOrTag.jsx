@@ -21,7 +21,7 @@ const CreatorOrTag = () => {
     }
   }, []);
 
-  // if (!posts.length && !isLoading) return 'No Posts';
+  if (!posts.length && !isLoading) return 'No Posts';
 
   return (
     <div>
