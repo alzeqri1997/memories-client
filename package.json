@@ -1,6 +1,7 @@
 {
   "name": "memories-client",
   "version": "0.1.0",
+  "homepage": "https://flamboyant-ramanujan-1e2385.netlify.app/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
