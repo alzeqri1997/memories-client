@@ -2,7 +2,7 @@
 It's a web application that lets you create and save your memories 
 
 --
-## To view a live example , **[click here](https://memories-server-2021.herokuapp.com/posts?page=1)**.
+## To view a live example , **[click here](https://flamboyant-ramanujan-1e2385.netlify.app/posts)**.
 --
 
 ## Usage
