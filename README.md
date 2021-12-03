@@ -18,6 +18,7 @@ It's a web application that lets you create and save your memories
 - User sign up
 
 ## Technologies Stack
+- [ReactJS](https://reactjs.org/)
 - [React Router](https://reactrouter.com/)
 - [redux](https://redux.js.org/)
 - [node](https://nodejs.org/en/) 
